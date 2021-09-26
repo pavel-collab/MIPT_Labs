@@ -9,8 +9,8 @@ plt.figure(figsize=(12, 7))
 fig, ax = plt.subplots()
 
 #plt.plot(x, y1, 'o-r', alpha=0.7, label="first", lw=5, mec='b', mew=2, ms=10)
-ax.scatter(x, y1, marker = 'o', linewidths = 4, c = 'deeppink')
-ax.set_facecolor('black')     #  цвет области Axes
+ax.scatter(x, y1, marker = 'o', linewidths = 4, c = 'black')
+ax.set_facecolor('deeppink')     #  цвет области Axes
 ax.set_title('My Plot.')
 #plt.legend()
 plt.grid(True)
