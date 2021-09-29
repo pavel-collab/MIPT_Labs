@@ -4,5 +4,6 @@
 *.log
 *.out
 *.gz
+__pycache__
 
 Data.ods
