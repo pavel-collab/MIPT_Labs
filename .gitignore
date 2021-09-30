@@ -4,6 +4,7 @@
 *.log
 *.out
 *.gz
+*.vscode
 __pycache__
 
 Data.ods

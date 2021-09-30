@@ -7,15 +7,18 @@ import seaborn as sns
 
 import PythonGraphMod
 
-x = [1, 2, 3, 4]
-y = [1, 2, 3, 4]
+# выкинули 4ю точку
+n = [1,   2,   3,   5,   6,   7,   8]
+B = [232, 314, 349, 362, 363, 364, 369]
 
-x_arr = np.array(x)
-y_arr = np.array(y)
-
+n_arr = np.array(n)
+B_arr = np.array(B)
 
 fig, ax = PythonGraphMod.CreateSimpleGraph()
 
-ax.plot(x_arr, y_arr)
-ax.grid(color = 'grey', linewidth = 1, linestyle = '--', alpha = 0.75)
+n_dence, B_dence = PythonGraphMod.InterpolateSet(n, B, 'cubic', 1, 8)
+ax.plot(n_dence, B_dence, color='blue', alpha=.75, lw=1, ls='-.')
+
+ax.scatter(n_arr, B_arr)
+PythonGraphMod.AddGreed(ax)
 plt.show()

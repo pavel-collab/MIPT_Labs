@@ -1,16 +1,28 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+from scipy.interpolate import interp1d
+
 def CreateSimpleGraph():
     figure, axes = plt.subplots()
     return figure, axes
 
 def CreateDoubleGraph():
-    figure = plt.figure(figsize=(5,4), dpi=100)
+    figure = plt.figure(figsize=(8,7), dpi=100)
 
     axes1 = figure.add_subplot(2, 1, 1)
     axes2 = figure.add_subplot(2, 1, 2)
     return figure, axes1, axes2
+
+def InterpolateSet(x, y, mode, x_min, x_max):
+    ApproximateFunction = interp1d(x, y, mode)
+
+    x_dence = np.linspace(x_min, x_max, 1000)
+    y_dence = ApproximateFunction(x_dence)
+    return x_dence, y_dence
+
+def AddGreed(ax) :
+    ax.grid(color = 'grey', linewidth = 1, linestyle = '--', alpha = 0.75)
 
 #==============================================================================================
 
@@ -78,6 +90,20 @@ markercolor -- цвет маркеров
 
 # ax.plot(x, y, color='blue', alpha=.75, lw=1, ls='--', marker='o',
 #                             markersize = 3, markercolor = 'yellow')
+
+#-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+'''
+горизонтальная линия
+параметры: координата по y, x_min, x_max
+'''
+# ax.hlines(286, 100, 350, ls='--')
+
+'''
+вертикальная линия
+параметры: координата по x, y_min, y_max
+'''
+# ax.vlines(235.6, 0, 400, ls='--')
 
 #-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 

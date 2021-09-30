@@ -46,8 +46,10 @@ ax.vlines(17.8 , 0  , 141,'red', ls='--')
 #----------------------------------------------------------------------------------------------
 
 plt.title ('amplitude-frequency characteristic')
-plt.xlabel('frequency')
-plt.ylabel('amplitude')
+plt.xlabel('frequency, кГц')
+plt.ylabel('amplitude, мВ')
 
 ax.grid(color = 'grey', linewidth = 1, linestyle = '--', alpha = 0.75)
 plt.show()
+
+fig.savefig("images/quality_factor.jpg")

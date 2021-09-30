@@ -1,7 +1,77 @@
 \input{preambule_article}
 
 \begin{document}
-    \input{title.tex}
+    % \input{title.tex}
 
-    
+    Измерим параметры магнитных шариков: $m_1 = 820$ г, $m_2 = 815$ г, $d = 5,9$ мм.\\
+    Величину магнитного момента двух одинаковых шариков можно расчитать, зная их массу и определив
+    максимальное расстояние $r_{max}$, на котором они удерживают друг друга.
+
+    \begin{equation*}
+        P_m = \sqrt{\frac{4 \pi mg r_{max}^4}{6 \mu_0}}
+    \end{equation*}
+
+    Перепишем выражение с учетом $\mu_0 = 4 \pi \cdot 10^{-7}$
+
+    \begin{equation*}
+        P_m = \sqrt{\frac{mg r_{max}^4}{6 \cdot 10^{-7}}} = 10^3 \cdot \sqrt{\frac{5 mg r_{max}^4}{3}}
+    \end{equation*}
+
+    В процессе эксперемента получено $r_{max} = 23$ мм.
+
+    \begin{center}
+        \fbox{$P_m = \text{А} \cdot \text{м}^2$}
+    \end{center}
+
+    Горизонтальную составляющую магнитного поля Земли можно найти, используя период крутильных колебаний.
+
+    \begin{equation*}
+        T = 2 \pi \sqrt{\frac{J_n}{P_{mn} B_{||}}}
+    \end{equation*}
+    где $J_n$ -- момент инерции стрелки из $n$ шариков, $P_{mn} = P_m \cdot n$ -- магнитный момент стрелки.
+    Момент инерции стрелки приближенно можно считать
+    \begin{equation*}
+        J_n \approx \frac{1}{3} n^3 m R^2
+    \end{equation*} 
+    тогда
+    \begin{equation*}
+        T = 2 \pi \sqrt{\frac{m R^2}{3 P_m B_{||}}} n
+    \end{equation*}
+
+    Снимем зависимость и построим график $T(n)$, тогда угловой коэффициент наклона будет равен $k = 2 \pi \sqrt{\frac{m R^2}{3 P_m B_{||}}}$.
+    От сюда найдем горизонтальную составляющую магнитного поля Земли: $B_{||} = \frac{m R^2}{3 P_m k^2}$.
+
+    % график и таблица
+
+    \begin{center}
+        \fbox{$B_{||} = $ мкТл}
+    \end{center}
+
+    Измерить вертикальную составляющую магнитного поля Земли можно с помощью той же установки, используя уравнение моментов.
+
+    \begin{equation*}
+        m g r_{\text{гр}} = n P_m B_{\perp}
+    \end{equation*}
+
+    \begin{center}
+        \fbox{$B_{\perp} = $ мкТл}
+    \end{center}
+
+    Найдем польный модуль магнитного поля Земли на текущей широте.
+
+    \begin{equation*}
+        B_0 = \sqrt{B_{||}^2 + B_{\perp}^2} = ~ \text{мкТл}
+    \end{equation*}
+
+    Исследуем индукцию соленоида. Параметры шайбы: $d = 9$ мм, $h = 4$ мм.
+
+    \begin{table}[h!]
+        \begin{center}
+            \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+                \hline
+                $n$      & 1   & 2   & 3   & 4   & 5   & 6   & 7   & 8   \\ \hline
+                $B$, мТл & 232 & 314 & 349 & 355 & 362 & 363 & 364 & 369 \\ \hline
+            \end{tabular}
+        \end{center}
+    \end{table}
 \end{document}
