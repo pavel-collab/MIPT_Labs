@@ -8,7 +8,7 @@ def CreateSimpleGraph():
     return figure, axes
 
 def CreateDoubleGraph():
-    figure = plt.figure(figsize=(5,4), dpi=100)
+    figure = plt.figure(figsize=(8,7), dpi=100)
 
     axes1 = figure.add_subplot(2, 1, 1)
     axes2 = figure.add_subplot(2, 1, 2)
@@ -20,6 +20,9 @@ def InterpolateSet(x, y, mode, x_min, x_max):
     x_dence = np.linspace(x_min, x_max, 1000)
     y_dence = ApproximateFunction(x_dence)
     return x_dence, y_dence
+
+def AddGreed(ax) :
+    ax.grid(color = 'grey', linewidth = 1, linestyle = '--', alpha = 0.75)
 
 #==============================================================================================
 
