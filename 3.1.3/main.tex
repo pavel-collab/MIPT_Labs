@@ -14,13 +14,13 @@
     Перепишем выражение с учетом $\mu_0 = 4 \pi \cdot 10^{-7}$
 
     \begin{equation*}
-        P_m = \sqrt{\frac{mg r_{max}^4}{6 \cdot 10^{-7}}} = 10^3 \cdot \sqrt{\frac{5 mg r_{max}^4}{3}}
+        P_m = \sqrt{\frac{mg r_{max}^4}{6} \cdot 10^7}
     \end{equation*}
 
     В процессе эксперемента получено $r_{max} = 23$ мм.
 
     \begin{center}
-        \fbox{$P_m = \text{А} \cdot \text{м}^2$}
+        \fbox{$P_m = 61,84 ~ \text{А} \cdot \text{м}^2$}
     \end{center}
 
     Горизонтальную составляющую магнитного поля Земли можно найти, используя период крутильных колебаний.
@@ -41,7 +41,17 @@
     Снимем зависимость и построим график $T(n)$, тогда угловой коэффициент наклона будет равен $k = 2 \pi \sqrt{\frac{m R^2}{3 P_m B_{||}}}$.
     От сюда найдем горизонтальную составляющую магнитного поля Земли: $B_{||} = \frac{m R^2}{3 P_m k^2}$.
 
-    % график и таблица
+    \begin{table}[h!]
+        \begin{center}
+            \begin{tabular}{|c|c|c|c|c|c|}
+                \hline
+                $n$ & 11   & 10   & 9   & 8    & 7    \\ \hline
+                $T$ & 2,86 & 2,67 & 2,4 & 2,23 & 1,95 \\ \hline
+            \end{tabular}
+        \end{center}
+    \end{table}
+
+    % вставить график
 
     \begin{center}
         \fbox{$B_{||} = $ мкТл}
@@ -54,7 +64,7 @@
     \end{equation*}
 
     \begin{center}
-        \fbox{$B_{\perp} = $ мкТл}
+        \fbox{$B_{\perp} = 49,9 $ мкТл}
     \end{center}
 
     Найдем польный модуль магнитного поля Земли на текущей широте.
@@ -74,4 +84,39 @@
             \end{tabular}
         \end{center}
     \end{table}
+
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[scale = 0.5]{индукция соленоида.png}
+        \caption{}
+    \end{figure}
+
+    Магнитное поле в произвольной точке $A$ на оси соленоида расчитывается по формуле
+
+    \begin{equation*}
+        B_A = \frac{\mu_0}{4 \pi} 2 \pi i (\cos \alpha - \cos \beta)
+    \end{equation*}
+
+    Для точки $O$ на торце соленоида $\cos \beta = 0$, так что для соленоида высотой $h$, радиусом $R$, и магнитным моментом
+    $P_m$ поле на торце расчитывается по формуле
+
+    \begin{equation*}
+        B(h) = \frac{\mu_0}{2} P_m \frac{h}{\sqrt{R^2 + h^2}}
+    \end{equation*}
+
+    Проведем небольшое исследование функции $B(h)$.
+
+    \begin{equation*}
+        \lim_{h \rightarrow \infty} \frac{\mu_0}{2} P_m \frac{h}{\sqrt{R^2 + h^2}} = \frac{\mu_0}{2} P_m
+    \end{equation*}
+
+    Таким образом, график функции $B(h)$ должен иметь горизонтальную асимптоту $B_0 = \frac{\mu_0}{2} P_m$, что мы и можем
+    наблюдать на практике.
+
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[scale = 1]{solenoid.png}
+        \caption{}
+    \end{figure}
+
 \end{document}
