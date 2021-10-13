@@ -1,0 +1,92 @@
+\input{preambule_article}
+
+\begin{document}
+    %\input{title.tex}
+
+    \noindent Проведем градуирование магнита.
+    \input{tables/graduation[table].tex}
+    % график градуирования
+
+    \noindent Измерим вольт-амперную характеристику образца.
+    \input{tables/VAC[table].tex}
+    % график ВАХ
+
+    \noindent Параметры образца.
+    \begin{center}
+        $a = 2,2$ мм -- ширина образца              \\
+        $h = 2,5$ мм -- толщина образца             \\
+        $L = 3,0$ мм -- расстояние между контактами \\
+    \end{center}
+
+    \noindent Удельное сопротивление образца можем посчитать по формуле
+    \begin{equation*}
+        \rho_0 = \frac{U_{35} a h}{I L}
+    \end{equation*}
+    \noindent Величину $\frac{U_{35}}{I}$ найдем из графика.
+
+    \begin{center}
+        \fbox{$\rho_0 = 3,2 \cdot 10^{-1} ~ \text{Ом} \cdot \text{м}$}
+    \end{center}
+
+    \noindent Найдем отсюда удельную проводимость.
+
+    \begin{center}
+        \fbox{$\sigma = 3,1 ~ (\text{Ом} \cdot \text{см})^{-1}$}
+    \end{center}
+
+    \noindent Снимем зависимость ЭДС Холла от значения индукции магнитного поля при разных значениях продольного тока.
+    Заметим, что напряжение на контактах связано не только с эффектом Холла, но и с 
+    оммическим падением напряжения вдоль пластины. Исключить этот эффект можно двумя способами:
+
+    \begin{enumerate}
+        \item Изменять направление магнитного поля, пронизывающего образец. При обращении поля знак
+        ЭДС Холла меняется, поэтому ЭДС Холла $U_{34}$ может быть определена по формуле
+        \begin{equation*}
+            U_{\bot} = \frac{U^{(+)} - U^{(-)}}{2}
+        \end{equation*}
+        \item Можно исключить влияние оммического падения напряжения, измеряя падение напряжения на образце $U_0$
+        в отсутсвии магнитного поля. Тогда ЭДС Холла вычисляться по формуле
+        \begin{equation*}
+            U_{\bot} = U_{34} - U_0
+        \end{equation*}
+    \end{enumerate}
+
+    % \begin{center}
+    %     $I = 1$    мА  \\
+    %     $U_0 = -38$ мкВ \\
+    % \end{center}
+    % \input{tables/HallEffect[table]Current1.tex}
+    % % график
+
+    % \begin{center}
+    %     $I = 0,5$    мА  \\
+    %     $U_0 = -17$ мкВ \\
+    % \end{center}
+    % \input{tables/HallEffect[table]Current2.tex}
+    % % график
+
+    % \begin{center}
+    %     $I = 0,3$    мА  \\
+    %     $U_0 = -10$ мкВ \\
+    % \end{center}
+    % \input{tables/HallEffect[table]Current2.tex}
+    % % график
+
+    \noindent По полученным данным вычислим концентрацию носителей зарядов в образце $n$, а так же их подвижность $\mu$.
+    % для продольного тока 1 мА
+
+    \begin{equation*}
+        \varepsilon_h = \frac{I B}{n e a} = R_h \frac{I B}{a}
+    \end{equation*}
+    где $e$ -- элементарный заряд, а $R_h = \frac{1}{n e}$ -- постоянная Холла. Тогда
+
+    \begin{center}
+        \fbox{$R_h = 0,0418 ~ \frac{\text{Ом}}{\text{А}}$} \\
+        \fbox{$n = 1,5 \cdot 10^{20} ~ \text{м}^{-3} = 1,5 \cdot 10^{16} ~ \text{см}^{-3}$}
+    \end{center}
+
+    Найдем подвижность носителей зарядов в образце, спользуя формулу
+    \begin{equation*}
+        \sigma = e n \mu \Rightarrow \mu = \frac{\sigma}{e n}
+    \end{equation*}
+\end{document}
