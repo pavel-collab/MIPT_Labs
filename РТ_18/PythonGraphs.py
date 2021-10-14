@@ -68,4 +68,5 @@ ax1_dfntg.set_title('График зависимости K(f)')
 ax2_dfntg.set_title('Граф Боде')
 plt.show()
 
-# fig.savefig('images/task1.png')
+# fig1.savefig('images/intgrt.png')
+# fig2.savefig('images/dfntg.png')
