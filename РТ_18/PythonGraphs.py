@@ -38,11 +38,11 @@ ax1_dfntg.plot(f_dfntg_dence, K_dfntg_dence, color='blue', alpha=.75, lw=1.5, ls
 #-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 # строим графы Боде
-n_intgrt_dence, lgK_intgrt_dence = PythonGraphMod.InterpolateSet(n_intgrt, lgK_intgrt, 'cubic', -2, 4)
-ax2_intgrt.plot(n_intgrt_dence, lgK_intgrt_dence, color='red', alpha=.75, lw=1.5, ls='-.')
+# n_intgrt_dence, lgK_intgrt_dence = PythonGraphMod.InterpolateSet(n_intgrt, lgK_intgrt, 'cubic', -2, 4)
+# ax2_intgrt.plot(n_intgrt_dence, lgK_intgrt_dence, color='red', alpha=.75, lw=1.5, ls='-.')
 
-n_dfntg_dence, lgK_dfntg_dence = PythonGraphMod.InterpolateSet(n_dfntg, lgK_dfntg, 'cubic', -4, 2)
-ax2_dfntg.plot(n_dfntg_dence, lgK_dfntg_dence, color='red', alpha=.75, lw=1.5, ls='-.')
+# n_dfntg_dence, lgK_dfntg_dence = PythonGraphMod.InterpolateSet(n_dfntg, lgK_dfntg, 'cubic', -4, 2)
+# ax2_dfntg.plot(n_dfntg_dence, lgK_dfntg_dence, color='red', alpha=.75, lw=1.5, ls='-.')
 
 #----------------------------------------------------------------------------------------------
 
@@ -67,3 +67,5 @@ fig2.suptitle('Дифференцирующая схема')
 ax1_dfntg.set_title('График зависимости K(f)')
 ax2_dfntg.set_title('Граф Боде')
 plt.show()
+
+# fig.savefig('images/task1.png')
