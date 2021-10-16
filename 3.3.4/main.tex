@@ -30,13 +30,13 @@
     \noindent Величину $\frac{U_{35}}{I}$ найдем из графика.
 
     \begin{center}
-        \fbox{$\rho_0 = 3,2 \cdot 10^{-1} ~ \text{Ом} \cdot \text{м}$}
+        \fbox{$\rho_0 = 0,312 ~ \text{Ом} \cdot \text{см}$}
     \end{center}
 
     \noindent Найдем отсюда удельную проводимость.
 
     \begin{center}
-        \fbox{$\sigma = 3,1 ~ (\text{Ом} \cdot \text{см})^{-1}$}
+        \fbox{$\sigma = 3,2 ~ (\text{Ом} \cdot \text{см})^{-1}$}
     \end{center}
 
     \noindent Снимем зависимость ЭДС Холла от значения индукции магнитного поля при разных значениях продольного тока.
@@ -56,6 +56,8 @@
         \end{equation*}
     \end{enumerate}
 
+    \newpage
+    % ------------------------------------------------------------------------------------------------------------------------
     \begin{center}
         $I = 1$    мА  \\
         $U_0 = -38$ мкВ \\
@@ -66,7 +68,8 @@
         \includegraphics[scale = 1]{HallEffectI1.jpg}
         \caption{}
     \end{figure}
-
+    % ------------------------------------------------------------------------------------------------------------------------
+    \newpage
     \begin{center}
         $I = 0,5$    мА  \\
         $U_0 = -17$ мкВ \\
@@ -77,33 +80,32 @@
         \includegraphics[scale = 1]{HallEffectI2.jpg}
         \caption{}
     \end{figure}
-
+    % ------------------------------------------------------------------------------------------------------------------------
+    \newpage
     \begin{center}
         $I = 0,3$    мА  \\
         $U_0 = -10$ мкВ \\
     \end{center}
-    \input{tables/HallEffect[table]Current2.tex}
+    \input{tables/HallEffect[table]Current3.tex}
     \begin{figure}[h!]
         \centering
         \includegraphics[scale = 1]{HallEffectI3.jpg}
         \caption{}
     \end{figure}
-
-    \noindent По полученным данным вычислим концентрацию носителей зарядов в образце $n$, а так же их подвижность $\mu$.
-    % для продольного тока 1 мА
+    % ------------------------------------------------------------------------------------------------------------------------
+    \noindent По полученным данным вычислим концентрацию носителей зарядов в образце $n$.
 
     \begin{equation*}
         \varepsilon_h = \frac{I B}{n e a} = R_h \frac{I B}{a}
     \end{equation*}
-    где $e$ -- элементарный заряд, а $R_h = \frac{1}{n e}$ -- постоянная Холла. Тогда
 
-    \begin{center}
-        \fbox{$R_h = 0,0418 ~ \frac{\text{Ом}}{\text{А}}$} \\
-        \fbox{$n = 1,5 \cdot 10^{20} ~ \text{м}^{-3} = 1,5 \cdot 10^{16} ~ \text{см}^{-3}$}
-    \end{center}
-
-    Найдем подвижность носителей зарядов в образце, спользуя формулу
+    \noindent Найдем подвижность носителей зарядов $\mu$ в образце, спользуя формулу
     \begin{equation*}
         \sigma = e n \mu \Rightarrow \mu = \frac{\sigma}{e n}
     \end{equation*}
+
+    \noindent где $e$ -- элементарный заряд, а $R_h = \frac{1}{n e}$ -- постоянная Холла. Тогда
+
+    \input{tables/results[tables].tex}
+
 \end{document}
