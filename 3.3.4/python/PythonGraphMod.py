@@ -3,10 +3,14 @@ import matplotlib.pyplot as plt
 
 from scipy.interpolate import interp1d
 
+'''функция создает фигуру fig и один рисунок ax на нем'''
+# fig, ax = CreateSimpleGraph() 
 def CreateSimpleGraph():
     figure, axes = plt.subplots()
     return figure, axes
 
+'''функция создает фигуру fig и 2 рисунка ax1 and ax2 -- один под другим'''
+# fig, ax1, ax2 = CreateDoubleGraph()
 def CreateDoubleGraph():
     figure = plt.figure(figsize=(8,7), dpi=100)
 
@@ -14,6 +18,17 @@ def CreateDoubleGraph():
     axes2 = figure.add_subplot(2, 1, 2)
     return figure, axes1, axes2
 
+'''
+Функция получает на вход:
+x     -- массив значений x_arr
+y     -- массив значений y_arr
+mode  -- тип интерполяции ('linear', 'quadratic', 'cubic')
+x_min -- нижняя граница диапазона x
+x_max -- верзняя граница диапазона x
+
+Возвразаемыми значениями являются: диапазоны x_dence y_dence, 
+по которым, с помощью функции plt.plot() троится кривая, интерполирующая зависимость y(x)
+''' 
 def InterpolateSet(x, y, mode, x_min, x_max):
     ApproximateFunction = interp1d(x, y, mode)
 
@@ -21,6 +36,13 @@ def InterpolateSet(x, y, mode, x_min, x_max):
     y_dence = ApproximateFunction(x_dence)
     return x_dence, y_dence
 
+'''
+функция добавляет на рисунок ax сетку с заданными параметрами:
+цвет сетки    -- серый
+толщина линий -- 1
+тип линий     -- "--"
+прозрачность  -- 0.75
+''' 
 def AddGreed(ax) :
     ax.grid(color = 'grey', linewidth = 1, linestyle = '--', alpha = 0.75)
 
