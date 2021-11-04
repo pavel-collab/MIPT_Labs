@@ -159,7 +159,7 @@ $$ |B|=\dfrac{1}{SN_{и}}\int U_{вх}dt=\dfrac{R_{и}С_{и}}{SN_{и}}U_{вых
 	$U = 36,62 ~ \text{мВ}$
 \end{center}
 
-\begin{figure}
+\begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.7\linewidth]{sample1.jpg}
 	\caption{Предельная петля, феррит}
@@ -168,14 +168,14 @@ $$ |B|=\dfrac{1}{SN_{и}}\int U_{вх}dt=\dfrac{R_{и}С_{и}}{SN_{и}}U_{вых
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.7\linewidth]{sample1_B_H_SciDAVis.jpg}
+	\includegraphics[width=0.7\linewidth]{sample1_B(H)Python.png}
 	\caption{Феррит, график зависимости $B(H)$}
 	\label{sample1_BH}
 \end{figure}
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.7\linewidth]{sample1_mu_H_SciDAVis.jpg}
+	\includegraphics[width=0.7\linewidth]{sample1_mu(H)Python.png}
 	\caption{Феррит, график зависимости $\mu(H)$}
 	\label{sample1_muH}
 \end{figure}
@@ -183,6 +183,13 @@ $$ |B|=\dfrac{1}{SN_{и}}\int U_{вх}dt=\dfrac{R_{и}С_{и}}{SN_{и}}U_{вых
 \newpage
 
 \input{tables/first_sample.tex}
+
+По результатам эксперемента максимальное значение магнитной проницаемости
+для феррита $\mu_{max} = 6518$
+
+\begin{center}
+	\fbox{$H_c = 9,0$ А/м; $B_s = 13,3$ Тл}
+\end{center}
 
 \subsection{Образец 2 (пермаллой)}
 
@@ -213,14 +220,14 @@ $$ |B|=\dfrac{1}{SN_{и}}\int U_{вх}dt=\dfrac{R_{и}С_{и}}{SN_{и}}U_{вых
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.7\linewidth]{sample2_B_H_SciDAVis.jpg}
+	\includegraphics[width=0.7\linewidth]{sample2_B(H)Python.png}
 	\caption{Пермаллой, график зависимости $B(H)$}
 	\label{sample2_BH}
 \end{figure}
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.7\linewidth]{sample2_mu_H_SciDAVis.jpg}
+	\includegraphics[width=0.7\linewidth]{sample2_mu(H)Python.png}
 	\caption{Пермаллой, график зависимости $\mu(H)$}
 	\label{sample2_muH}
 \end{figure}
@@ -228,6 +235,13 @@ $$ |B|=\dfrac{1}{SN_{и}}\int U_{вх}dt=\dfrac{R_{и}С_{и}}{SN_{и}}U_{вых
 \newpage
 
 \input{tables/second_sample.tex}
+
+По результатам эксперемента максимальное значение магнитной проницаемости
+для пермаллоя $\mu_{max} = 19016$
+
+\begin{center}
+	\fbox{$H_c = 19,2$ А/м; $B_s = 1,2$ Тл}
+\end{center}
 
 \subsection{Образец 3 (кремнистое железо)}
 
@@ -254,6 +268,116 @@ $$ |B|=\dfrac{1}{SN_{и}}\int U_{вх}dt=\dfrac{R_{и}С_{и}}{SN_{и}}U_{вых
 	\label{sample3_pic}	
 \end{figure}
 
+\section{Вывод}
+
+Петля гистерезиса является качественной характеристикой намагничивания ферромагнетика, 
+показывая такие эффекты, как домены, в том числе площадь петли пропорциональна энергии, 
+теряемой в единице объёма вещества за время цикла.
+
 \section{Дополнительные вопросы к работе}
+
+\begin{enumerate}
+	\item Вывести формулу индуктивности тора $L$ (длинного соленоида) с магнитным сердечником. 
+	Рассчитать $L$ для первичной и вторичной обмоток.
+
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.7\linewidth]{Тороидальная катушка.png}
+		\caption{Тороидальная катушка}
+		% \label{}
+	\end{figure}
+
+	Пусть есть тороидальная катушка с внутренним радиусом $R$ и числом витков $N$. По теореме о циркуляции
+     
+    \begin{equation}
+        B \cdot 2 \pi r = \frac{4 \pi}{c} I \Rightarrow B = \frac{2 \mu N}{cr} I
+    \end{equation}
+    
+    Тогда поток вектора индукции через тороидальную катушку прямоугольного сечения
+    
+    \begin{equation}
+        \int_R^{R+a} B(r) N b dr = \int_R^{R+a} \frac{2 \mu N^2}{cr} I b dr = \frac{2 \mu N^2 I b}{c} \ln \frac{R + a}{R} 
+    \end{equation}
+    
+    \begin{equation}
+        \Phi = \frac{2 \mu N^2 I b}{c} \ln \frac{R + a}{R} = \frac{L I}{c}
+    \end{equation}
+    
+    Тогда индуктивность тороидальной катушки
+    
+    \begin{equation}
+        L = 2 \mu N^2 b \ln \frac{R + a}{R}
+    \end{equation}
+    
+    Если проволака намотана тонким радиусом, то выполняется соотношение $\frac{a}{R} \ll 1$. 
+	В этом случае, раскладывая натуральный логарифм в ряд Тейлора получим \footnote{В данной задаче мы считали,
+	что тороидальная катушка имеет прямоугольное сечение с площадью $S$, указанной в параметрах образца, поэтому получим расчетную формулу
+	$L = \frac{2 \mu N^2 S}{R}$}
+    
+    %% в общем-то, вместо a, b в этой формуле можно подставить r^2, где r -- радиус намотки
+    \begin{equation}
+        L = \frac{2 \mu N^2 b a}{R}
+    \end{equation}
+    %% после этого в общем-то все величины становятся известными, и можно вычислить индуктивность для первичной и вторичной обмоток
+
+	\input{tables/L.tex}
+
+	\item Определить резонансную частоту контура на вторичной обмотке. Оценить его добротность.
+	
+	Согласно схеме, мы имеем дело с параллельным RCL-контуром. Выражение для резонансной частоты
+    
+	Параметры установки: $R_u = 200$ кОм, $C = 200$ мкФ.
+
+	%% L -- расчитываем из пункта 1, C -- дано в схеме
+	\begin{equation}
+		\omega_0 = \frac{1}{\sqrt{LC}}
+	\end{equation}
+
+	Резонансная частота на феррите $\omega_0 = 56,39 ~ \text{с}^{-1}$.
+	Резонансная частота на пермаллое $\omega_0 = 57,49 ~ \text{с}^{-1}$.
+	
+	Добротность для последовательного контура
+	
+	\begin{equation}
+		Q = R \sqrt{\frac{C}{L}}
+	\end{equation}
+
+	Добротность контура при исследовании феррита:
+	
+	\begin{center}
+		\fbox{$Q = 71,4$ }	
+	\end{center}
+
+	Добротность контура при исследовании пермаллоя:
+	
+	\begin{center}
+		\fbox{$Q = 72,8$ }	
+	\end{center}
+
+	\item Определить реактивные сопротивления катушки, емкости и сравнить их с активным сопротивлением.
+
+	%% не понятно, какую частоту контура брать. Возможно резонансную
+	\begin{equation}
+		X_L = \omega L ~ X_C = \frac{1}{\omega C}
+	\end{equation}
+
+	Значения реактивных сопративлений для феррита: $X_L = 280,2$ Ом, $X_C = 280,1$ Ом;
+
+	Значения реактивных сопративлений для пермаллоя: $X_L = 274,8$ Ом, $X_C = 274,7$ Ом;
+
+	Активное сопративление схемы $R = 200000$ Ом. Можем убедиться в том, что
+	для обоих образцов $X_L \ll R$ и $X_C \ll R$.
+
+	\item Пояснить качественно, как будет меняться резонансная частота контура в зависимости от тока через первичную обмотку.
+	
+	При небольших токах вклад в общий поток, а с ним собственно и
+	в индуктивность, дает как магнитное поле, создаваемое током, так и
+	намагниченность сердечника.
+
+	При достаточно больших токах последнее слагаемое перестает вносить вклад, так как существует состояние насыщения. Следовательно,
+	при достаточно больших токах при его увеличении общая индуктивность
+	падает, а так как $\omega = \frac{1}{\sqrt{LC}}$, то резонансная частота возрастает.
+
+\end{enumerate}
 
 \end{document}
