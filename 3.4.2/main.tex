@@ -1,0 +1,99 @@
+\input{include/preambule_article.tex}
+
+\begin{document}
+    \input{include/title.tex}
+    \newpage
+
+    Запишем закон Кюри-Вейесса
+
+    \begin{equation}
+        \chi \propto \frac{1}{T - \theta_p}
+    \end{equation}
+
+    \noindent где $\theta_p$ -- параметр размерности температуры. Закон Кюри-Вейесса хорошо выполняется вдали от $\theta_K$ -- 
+    температуры Кюри, однако нарушается при $T \rightarrow \theta_K$. Поэтому параметр $\theta_p$ отличается от температуры Кюри
+    (как правило $\theta_K < theta_p$). На практике наблюдается картина, изображенная на \hyperref[theory_xi]{рисунке}.
+
+    \begin{figure}
+        \centering
+        \includegraphics[scale = 0.75]{theory.png}
+        \caption{Зависимость обратной магнитной восприимчивости от температуры}
+        \label{theory_xi}
+    \end{figure}
+
+    Для практического исследования будем применять формулу
+
+    \begin{equation}
+        \frac{1}{\chi} \propto (T - \theta_p) \propto \frac{1}{\tau^2 - \tau_0^2}
+    \end{equation}
+
+    \noindent $\tau$ -- период колебания автогениратора, $\tau_0$ -- период колебаний автогениратора в отсутствии исследуемого
+    образца.
+
+    Запишем параметры установки
+
+    \begin{center}
+        $\tau_0 = 9,045$ мкс -- период колебаний автогениратора в отсутствии исследуемого образца \\
+        $L_0 = 1602$ мкГн -- индуктивность в отсутствии исследуемого образца \\
+        $k = 24$ град/мВ -- чувствительность термопары \\
+    \end{center}
+
+    Отсюда посчитаем точность определения температуры
+
+    \[ 24 \cdot 3 \cdot 10^{-3} ~ \text{мВ} = 0,072 ~ C^{o} \]
+
+    Выражение для индуктивности тороидальной катушки в СИ
+
+    \begin{equation}
+        L = \frac{\mu_0 \mu N}{2 \pi R} S
+    \end{equation}
+
+    Период колебаний по формуле Джоуля-Томсона
+
+    \begin{equation}
+        \tau = 2 \pi \sqrt{L C}
+    \end{equation}
+
+    \begin{equation}
+        \frac{\tau^2 - \tau_0^2}{\tau_0^2} = \frac{\tau^2}{\tau_0^2} - 1 = \frac{\mu}{\mu_0} - 1 = \mu - 1 = \chi        
+    \end{equation}
+
+    Таким образом, получаем
+
+    \begin{equation}
+        \chi = \frac{\tau^2}{\tau_0^2} - 1
+    \end{equation}
+
+    \input{tables/experiment.tex}
+
+    Используя данные, полученные при проведении эксперимента, построим графики зависимости \hyperref[graph_1x(T)]{$1/\chi(T)$},
+    \hyperref[graph_x_mu_(T)]{$\chi(T)$}, \hyperref[graph_x_mu_(T)]{$\mu(T)$} и \hyperref[graph_L(T)]{$L(T)$}.
+
+    \begin{figure}
+        \centering
+        \includegraphics[width = \linewidth]{graph_1x(T).png}
+        \caption{Зависимость обратной магнитной восприимчивости от температуры}
+        \label{graph_1x(T)}
+    \end{figure}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{imgonline-com-ua-2to1-spGCn2gxrV.jpg}
+        \caption{Графики зависимости магнитной восприимчивости и магнитной проницаемости от температуры}
+        \label{graph_x_mu_(T)}
+    \end{figure}
+
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=\linewidth]{graph_L(T).png}
+        \label{graph_L(T)}
+        \caption{Зависимость индуктивности от температуры}
+    \end{figure}
+
+    Используя эксперементальные данные и графики получаем значение параметра $\theta_p$:
+
+    \begin{center}
+        \fbox{$\theta_p = 291 ~ K = 18 ~ C^o$}
+    \end{center}
+
+\end{document}
