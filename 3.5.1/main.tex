@@ -3,4 +3,107 @@
 \begin{document}
     \input{include/title.tex}
 
+    \section{Расчетные формулы}
+
+    \begin{enumerate}
+
+		\item Температура электронов:
+        \begin{equation} \label{electron Temperature}
+            T_e = \frac{1}{2k_\text{Б}}\frac{eI_i}{\frac{dI}{dU}|_{U = 0}}
+        \end{equation}	
+        \item Электронный ток насыщения:
+        \begin{equation} \label{saturation current}
+            I_i \simeq 0.4 n_e e S \sqrt{\frac{2k_\text{Б}T_e}{m_i}}
+        \end{equation}	
+        \item Плазменная(ленгмюровская) частота:
+        \begin{equation} \label{omega_p}
+            \omega_p = \sqrt{\frac{4\pi n_e e^2}{m_e}}
+        \end{equation}
+        \item Электронная поляризационная длина:
+        \begin{equation} \label{r_{De}}
+            r_{De} = \sqrt{\frac{k_\text{Б}T_e}{4\pi n_e e^2}}      
+        \end{equation}
+        \item Ионная поляризационная длина:
+        \begin{equation} \label{r_{Di}}
+            r_{Di} = \sqrt{\frac{k_\text{Б}T_i}{4\pi n_i e^2}}
+        \end{equation}
+        \item Дебаевский радиус:
+        \begin{equation} \label{r_D}
+            r_D = (r_{De}^{-2} + r_{Di}^{-2})^{-1/2} = \sqrt{\frac{k_{\text{Б}}}{2 \pi n_e e^2} \frac{T_e T_i}{T_e + T_i}}
+        \end{equation}
+
+	\end{enumerate}
+
+    \section{Обработка эксперементальных данных}
+
+    Запишем параметры установки
+    \begin{center}
+        Диаметр зонда $d = 0.2$ мм \\
+        Длина зонда $l = 5.2$ мм \\
+        Длина трубки $L \approx 35.5$ см \\
+    \end{center}
+
+    Эксперементально установленное напряжение зажигания заряда $U_{\text{заж}} \approx 1.54$ кВ.
+
+    Снимем вольт-амперную характеристику разряда.
+
+    \input{tables/VAC1.tex}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width = \textwidth]{VAC1.png}
+    \end{figure}
+
+    Сравнив имзеренный участок с \hyperref[diagram]{графиком}, приходим к выводу, что измеренный участок
+    соответсвует участку $DC$ диаграммы. По наклону кривой определим максимальное
+    дифференциальное сопротивление разряда.
+
+    \begin{center}
+        \fbox{$R_{\text{диф}} = 27,83$ Ом}
+    \end{center}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width = 0.5\textwidth]{диаграмма разряда.jpeg}
+        \caption{Вольт-амперная характеристика разряда}
+        \label{diagram}
+    \end{figure}
+
+    Снимем зондовые характеристики при $I_p = 4.8$ мА, $I_p = 3$ мА, $I_p = 1.5$ мА.
+
+    \input{tables/VAC2.tex}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width = \textwidth]{VAC2.png}
+        \caption{$I_p = 4.8$ мА}
+    \end{figure}
+
+    \input{tables/VAC3.tex}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width = \textwidth]{VAC3.png}
+        \caption{$I_p = 3$ мА}
+    \end{figure}
+
+    \input{tables/VAC4.tex}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width = \textwidth]{VAC4.png}
+        \caption{$I_p = 1.5$ мА}
+    \end{figure}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width = \textwidth]{all_VAC.png}
+    \end{figure}
+
+    Для расчета температуры электронов $T_e$, концентрации электронов и ионов
+    $n_e = n_i$ а так же плазменной частоты $\omega_p$ воспользуемся формулами 
+    \eqref{electron Temperature} \eqref{saturation current} \eqref{omega_p}. 
+
+    \input{tables/results_tab1.tex}
+
 \end{document}
