@@ -11,25 +11,33 @@
         \begin{equation} \label{electron Temperature}
             T_e = \frac{1}{2k_\text{Б}}\frac{eI_i}{\frac{dI}{dU}|_{U = 0}}
         \end{equation}	
-        \item Электронный ток насыщения:
+        \item Электронный ток насыщения [СИ]:
         \begin{equation} \label{saturation current}
             I_i \simeq 0.4 n_e e S \sqrt{\frac{2k_\text{Б}T_e}{m_i}}
         \end{equation}	
-        \item Плазменная(ленгмюровская) частота:
+        \item Плазменная(ленгмюровская) частота [СГС]:
         \begin{equation} \label{omega_p}
-            \omega_p = \sqrt{\frac{4\pi n_e e^2}{m_e}}
+            \omega_p = \sqrt{\frac{4\pi n_e e^2}{m_e}} \approx 5.6 \cdot 10^4 \sqrt{n_e}
         \end{equation}
-        \item Электронная поляризационная длина:
+        \item Электронная поляризационная длина [СГС]:
         \begin{equation} \label{r_{De}}
             r_{De} = \sqrt{\frac{k_\text{Б}T_e}{4\pi n_e e^2}}      
         \end{equation}
-        \item Ионная поляризационная длина:
+        \item Ионная поляризационная длина [СГС]:
         \begin{equation} \label{r_{Di}}
             r_{Di} = \sqrt{\frac{k_\text{Б}T_i}{4\pi n_i e^2}}
         \end{equation}
-        \item Дебаевский радиус:
+        \item Дебаевский радиус [СГС] (в предположениии $T_i \ll T_e$):
         \begin{equation} \label{r_D}
-            r_D = (r_{De}^{-2} + r_{Di}^{-2})^{-1/2} = \sqrt{\frac{k_{\text{Б}}}{2 \pi n_e e^2} \frac{T_e T_i}{T_e + T_i}}
+            r_D = (r_{De}^{-2} + r_{Di}^{-2})^{-1/2} = \sqrt{\frac{k_{\text{Б}}}{2 \pi n_e e^2} \frac{T_e T_i}{T_e + T_i}} \approx \sqrt{\frac{k_\text{Б}T_i}{4\pi n_i e^2}}
+        \end{equation}
+        \item Среднее число ионов в дебаевской сфере:
+        \begin{equation} \label{N_i}
+            N_i = \frac{4}{3} \pi r_D^3 n_i
+        \end{equation}
+        \item Степень ионизации плазмы ($P$ -- давление в трубке):
+        \begin{equation} \label{alpha}
+            \alpha = \frac{k_{\text{Б}} n_i T_i}{P}
         \end{equation}
 
 	\end{enumerate}
@@ -40,18 +48,18 @@
     \begin{center}
         Диаметр зонда $d = 0.2$ мм \\
         Длина зонда $l = 5.2$ мм \\
-        Длина трубки $L \approx 35.5$ см \\
+        Длина трубки $L \approx 35.5$ мм \\
     \end{center}
 
     Эксперементально установленное напряжение зажигания заряда $U_{\text{заж}} \approx 1.54$ кВ.
 
     Снимем вольт-амперную характеристику разряда.
 
-    \input{tables/VAC1.tex}
-
     \begin{figure}
         \centering
-        \includegraphics[width = \textwidth]{VAC1.png}
+        \includegraphics[width = \textwidth]{merged.jpg}
+        \caption{Вольт-амперная характеристика разряда}
+        \label{diagram}
     \end{figure}
 
     Сравнив имзеренный участок с \hyperref[diagram]{графиком}, приходим к выводу, что измеренный участок
@@ -62,48 +70,68 @@
         \fbox{$R_{\text{диф}} = 8.05 \cdot 10^4$ Ом}
     \end{center}
 
-    \begin{figure}
-        \centering
-        \includegraphics[width = 0.5\textwidth]{диаграмма разряда.jpeg}
-        \caption{Вольт-амперная характеристика разряда}
-        \label{diagram}
-    \end{figure}
-
     Снимем зондовые характеристики при $I_p = 4.8$ мА, $I_p = 3$ мА, $I_p = 1.5$ мА.
 
-    \input{tables/VAC2.tex}
-
     \begin{figure}
         \centering
-        \includegraphics[width = \textwidth]{VAC2.png}
+        \includegraphics[width = 0.8\textwidth]{VAC2.png}
         \caption{$I_p = 4.8$ мА}
     \end{figure}
 
-    \input{tables/VAC3.tex}
-
     \begin{figure}
         \centering
-        \includegraphics[width = \textwidth]{VAC3.png}
+        \includegraphics[width = 0.8\textwidth]{VAC3.png}
         \caption{$I_p = 3$ мА}
     \end{figure}
 
-    \input{tables/VAC4.tex}
-
     \begin{figure}
         \centering
-        \includegraphics[width = \textwidth]{VAC4.png}
+        \includegraphics[width = 0.8\textwidth]{VAC4.png}
         \caption{$I_p = 1.5$ мА}
     \end{figure}
 
     \begin{figure}
         \centering
-        \includegraphics[width = \textwidth]{all_VAC.png}
+        \includegraphics[width = 0.8\textwidth]{all_VAC.png}
     \end{figure}
 
     Для расчета температуры электронов $T_e$, концентрации электронов и ионов
     $n_e = n_i$ а так же плазменной частоты $\omega_p$ воспользуемся формулами 
     \eqref{electron Temperature} \eqref{saturation current} \eqref{omega_p}. 
+    (Масса иона неона $m_i = 22 \cdot 1.66 \cdot 10^{-27}$ кг, заряд электрона в СГС $e = -4.8 \cdot 10^{-10}$ ед. зар.).
 
     \input{tables/results_tab1.tex}
+
+    Для расчета электронной поляризационной длинны $r_{De}$, радиуса экранирования $r_D$, среднего числа ионов в
+    дебаевском радиусе $N_i$ и степени ионизации плазмы $\alpha$ воспользуемся формулами \eqref{r_{De}}, \eqref{r_D}, \eqref{N_i}, \eqref{alpha}.
+    (Давление в трубке $P = 2$ торр).
+
+    \input{tables/results_tab2.tex}
+
+    Построим графики $T_e(I_p)$ и $n_e(I_p)$.
+
+    \begin{figure}
+        \centering
+        \includegraphics[width = 0.8\textwidth]{Te(Ip).png}
+        \caption{График зависимости температуры электронов от тока заряда}
+    \end{figure}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width = 0.8\textwidth]{ne(Ip).png}
+        \caption{График зависимости концентрации электронов от тока заряда}
+    \end{figure}
+
+    \textbf{Вывод:} как можно видеть из графиков, зависимости $T_e(I_p)$ и $n_e(I_p)$ практически линейный. 
+    По результатам эксперемента можно считать, что $N_D \gg 1$, поэтому плазму в данном эксперементе можно считать идеальной.
+    Кроме того, линейные размеры плазмы намного привосходят величину $r_{De}$,
+    поэтому плазму можно считать квазинейтральной.
+
+    \section{Таблицы эксперементальных данных}
+
+    \input{tables/VAC1.tex}
+    \input{tables/VAC2.tex}
+    \input{tables/VAC3.tex}
+    \input{tables/VAC4.tex}
 
 \end{document}
