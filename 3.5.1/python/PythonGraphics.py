@@ -31,7 +31,7 @@ I1 = np.array(df_Data_exp_VAC1['I'])
 U1 = np.array(df_Data_exp_VAC1['U'])
 
 # calculate a params of tangents
-res = linregress(U1[:-5:-1], I1[:-5:-1])
+res = linregress(U1[2:4:1], I1[2:4:1])
 
 # create figure and graph
 fig1, ax1 = PythonGraphMod.CreateSimpleGraph()
@@ -47,9 +47,9 @@ ax1.plot(U1, res.intercept + res.slope * U1, color='green', alpha=.75, lw=1.5, l
 plt.title ('ВАХ разряда в Неоне')
 plt.xlabel('U, В')
 plt.ylabel('I, мА')
-ax1.text(140, 700, 'dI/dU = ' + str(round(res.slope, 3)), size = 15)
-ax1.text(140, 600, r'$R_{диф} = $' + str(round(abs(1000/res.slope), 3)) + ' Ом', size = 15)
-plt.ylim([100, 1000])
+ax1.text(180, 3, 'dI/dU = ' + str(round(res.slope, 3)), size = 15)
+ax1.text(180, 2.5, r'$R_{диф} = $' + str(round(abs(1000/res.slope), 3)) + ' Ом', size = 15)
+plt.ylim([0, 6])
 PythonGraphMod.AddGreed(ax1)
 
 # =================================================================================================
@@ -229,7 +229,7 @@ PythonGraphMod.AddGreed(ax5)
 plt.show()
 
 # safing figures
-# fig1.savefig('../images/VAC1.png')
+fig1.savefig('../images/VAC1.png')
 # fig2.savefig('../images/VAC2.png')
 # fig3.savefig('../images/VAC3.png')
 # fig4.savefig('../images/VAC4.png')
