@@ -51,8 +51,8 @@ def InterpolateSet(x, y, mode, x_min, x_max):
 ''' 
 def AddGreed(ax) :
     # ax.minorticks_on()
-    ax.grid(which = 'major', color = 'black', linewidth = 1, linestyle = '-', alpha = 0.75)
-    ax.grid(which = 'minor', color = 'grey', linewidth = 1, linestyle = '--', alpha = 0.5)
+    ax.grid(color = 'black', linewidth = 1, linestyle = '-', alpha = 0.75)
+    # ax.grid(which = 'minor', color = 'grey', linewidth = 1, linestyle = '--', alpha = 0.5)
 
 #==============================================================================================
 
