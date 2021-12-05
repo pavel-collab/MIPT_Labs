@@ -50,7 +50,9 @@ def InterpolateSet(x, y, mode, x_min, x_max):
 прозрачность  -- 0.75
 ''' 
 def AddGreed(ax) :
-    ax.grid(color = 'grey', linewidth = 1, linestyle = '--', alpha = 0.75)
+    # ax.minorticks_on()
+    ax.grid(which = 'major', color = 'black', linewidth = 1, linestyle = '-', alpha = 0.75)
+    ax.grid(which = 'minor', color = 'grey', linewidth = 1, linestyle = '--', alpha = 0.5)
 
 #==============================================================================================
 
