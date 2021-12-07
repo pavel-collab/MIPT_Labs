@@ -2,4 +2,134 @@
 
 \begin{document}
     \input{./include/title.tex}
+
+    \section{Ход работы}
+
+    %% подписать что есть что
+    \begin{center}
+        Запишем параметры установки \\
+        $a = 25$ мм \\
+        $h = 1.5$ мм
+    \end{center}
+
+    \begin{enumerate}
+        \item Сняли зависимость $U(f)$ и $I(f)$ в области низких частот: 10-100 Гц для получаения зависимости
+        амплитуды магнитного поля внутри экрана от частоты $\xi_{0c}(f)$. Результаты измерений приведены в таблице %какой.
+
+        \begin{equation}
+            \xi_{0c} = \frac{U}{f I}
+        \end{equation}
+
+        \item Одновременно исследовали зависимоть $\xi_{0c}$ и фазового сдвига $\Delta \psi$ от частоты в диапазоне высоких частот
+        0.1-35 кГц. Результаты измерений приведены в таблице %какой.
+        \\
+        \textbf{Замечание:} сдвиг фазы $\Delta \varphi$, измеренный по экрану осцилографа, будет отличаться от
+        фазового сдвига между магнитными полями вне и внутри экрана на $\pi/2$.
+
+        \[ \Delta \psi = \Delta \varphi + \frac{\pi}{2} \]
+    \end{enumerate}
+
+    \input{tables/low_freqency.tex}
+
+    \input{tables/hight_freqency.tex}
+
+    \section{Обработка результатов}
+
+    В области низких частот построим график $\xi_{0c}(f^2)$.
+
+    \begin{figure}
+        \centering
+        \includegraphics[width = \textwidth]{xi0c(1).jpg}
+        \caption{График зависимости $\xi_{0c}$ от $f^2$}
+        \label{xi0c(1)}
+    \end{figure}
+
+    Экстраполируя прямую к $f = 0$ найдемамплитуду внешнего поля $\xi_0$.
+
+    \begin{center}
+        \fbox{$\xi_0 = (0.019 ~ \pm ~ 0.000037)$}
+    \end{center}
+
+    Изобразим зависимость частоты фазового сдвига $\Delta \psi$ от $\sqrt{f}$ в диапазоне высоких частот.
+    Проведем наилучшую прямую, заметим, что при $f = 0$ значение ординаты $y_0 = 0.75 \approx \pi/4$.
+
+    \begin{figure}
+        \centering
+        \includegraphics[width = \textwidth]{DeltaPsi.jpg}
+        \caption{График зависимости $\Delta \psi$ от $\sqrt{f}$}
+        \label{DeltaPsi}
+    \end{figure}
+
+    По наклону прямой найдем значение проводимости материала экрана.
+
+    \begin{equation}
+        \Delta \psi = \frac{\pi}{4} + \frac{h \sqrt{2 \pi \mu_0 \sigma f}}{\sqrt{2}}
+    \end{equation}
+
+    \begin{center}
+        \fbox{$\sigma = (5.178 \cdot 10^7 ~ \pm ~ )$ См/м} \\
+        Табличное значение проводимости меди $\sigma_{\text{табл}} = 6.48 \cdot 10^7$ См/м.
+    \end{center}
+
+    \textbf{Замечание:} обратим внимание на то, что полученное значение проводимости меди меньше табличного. %% Почему
+    \textbf{Замечание:} обратим внимание, кроме того, на резкий рост значений графика в области частот, начиная с 30-31 кГц. %% Почему
+
+    Импользуя ранее найденное значение амплитуды внешнего поля $\xi_0$ и результаты измерений $\xi_{0c}$
+    в области высоких частот, посчитаем коэффициент ослабления магнитного поля в соответствии с формулой.
+
+    \begin{equation}
+        \frac{|H_{0c}|}{|H_{0}|} = \frac{\xi_{0c}(f)}{\xi_0} = \frac{U}{f I \xi_0}
+    \end{equation}
+
+    Построим график зависимости $\frac{|H_{0c}|}{|H_{0}|}$ от $\sqrt(f)$.
+
+    \begin{figure}
+        \centering
+        \includegraphics[width = \textwidth]{xi_xi0(sqrt).jpg}
+        \caption{График зависимости $\frac{|H_{0c}|}{|H_{0}|}$ от $\sqrt(f)$}
+        \label{xi_xi0(sqrt)}
+    \end{figure}
+
+    Расчитаем аналогичную теоретическую зависимость по формуле
+
+    \begin{equation}
+        H_{0c} = \frac{2 H_0}{a k \sinh{k h} + 2 \cosh{k h}}
+    \end{equation}
+
+    где
+    \begin{equation}
+        \delta = \sqrt{\frac{1}{\pi \mu_0 \mu \sigma f}}
+    \end{equation}
+    глубина проникновения, а
+    \begin{equation}
+       k = \frac{1 + i}{\delta} 
+    \end{equation}
+
+    Стоит воспользоваться приближением при низких и высоких частотах. 
+    При низких частотах выражение приближается формулой 
+    \begin{equation}
+        \frac{|H_1|}{|H_0|} = \frac{1}{\sqrt{1 + \frac{1}{4} (2 \pi a h \sigma \mu_0 f)^2}}
+    \end{equation}
+
+    При высоких частотах 
+    \begin{equation}
+        \frac{|H_1|}{|H_0|} = \frac{2 \sqrt{2} \delta}{a} e^{-\frac{h}{\delta}}
+    \end{equation}
+
+    Полученная таким образом теоретическая зависимость достаточно хорошо ложиться на эксперементальные данные.
+
+    \begin{figure}
+        \centering
+        \includegraphics[width = \textwidth]{exp_th(sqrt).jpg}
+        \caption{Сравнение экспериментальной зависимости с теоретической}
+        \label{exp_th(sqrt)}
+    \end{figure}
+
+    Воспользовавшись найденным значением $\sigma$, вычислим глубину проникновения $\delta$ при частотах 50 Гц и $10^5$ Гц.
+
+    \begin{center}
+        На частоте 50 Гц глубина проникновения $\delta = ( ~ \pm ~ )$ \\
+        На частоте $10^5$ Гц глубина проникновения $\delta = ( ~ \pm ~ )$
+    \end{center}
+    
 \end{document}
