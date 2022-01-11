@@ -63,3 +63,18 @@
 \usepackage{gensymb} %Красивые градусы
 \usepackage{graphicx}               % Импорт изображений
 \usepackage{caption} % Пакет для подписей к рисункам, в частности, для работы caption*
+
+% подключаем hyperref (для ссылок внутри  pdf)
+\usepackage[unicode, pdftex]{hyperref}
+
+%%% Теоремы
+\theoremstyle{plain}                    % Это стиль по умолчанию, его можно не переопределять.
+\renewcommand\qedsymbol{$\blacksquare$} % переопределение символа завершения доказательства
+
+\newtheorem{theorem}{Теорема}[section] % Теорема (счетчик по секиям)
+\newtheorem{proposition}{Утверждение}[section] % Утверждение (счетчик по секиям)
+\newtheorem{definition}{Определение}[section] % Определение (счетчик по секиям)
+\newtheorem{corollary}{Следствие}[theorem] % Следстиве (счетчик по теоремам)
+\newtheorem{problem}{Задача}[section] % Задача (счетчик по секиям)
+\newtheorem*{remark}{Примечание} % Примечание (можно переопределить, как Замечание)
+\newtheorem{lemma}{Лемма}[section] % Лемма (счетчик по секиям)
