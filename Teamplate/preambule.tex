@@ -13,10 +13,14 @@
 
 %% Номера формул
 %\mathtoolsset{showonlyrefs=true} % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
+%\usepackage{leqno} % Немуреация формул слева
 
 %% Шрифты
 \usepackage{euscript}	 % Шрифт Евклид
 \usepackage{mathrsfs} % Красивый матшрифт
+
+%%% Свои команды
+\DeclareMathOperator{\sgn}{\mathop{sgn}}
 
 %% Поля
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
@@ -58,10 +62,9 @@
 \newcommand*{\hm}[1]{#1\nobreak\discretionary{}
 	{\hbox{$\mathsurround=0pt #1$}}{}}
 
-%% Мои дополнения
+%% дополнения
 \usepackage{float} %Добавляет возможность работы с командой [H] которая улучшает расположение на странице
 \usepackage{gensymb} %Красивые градусы
-% \usepackage{graphicx}               % Импорт изображений
 \usepackage{caption} % Пакет для подписей к рисункам, в частности, для работы caption*
 
 % подключаем hyperref (для ссылок внутри  pdf)
