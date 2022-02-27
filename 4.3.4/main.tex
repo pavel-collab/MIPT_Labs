@@ -130,11 +130,11 @@
 		\begin{tabular}{|c|c|c|c|c|}
 			\hline
 			Решетка    & $X$, мм  & $m$ & $d$, мм & $\sigma_d \cdot 10^{-3}$, мм\\ \hline
-			1          & 147      & 2   & 0.02    & 0.068\\ \hline
-			2          & 99       & 2   & 0.03    & 0.152\\ \hline
-			3          & 50       & 2   & 0.07    & 0.700\\ \hline
-			4          & 37       & 3   & 0.14    & 1.891\\ \hline
-			5          & 28       & 3   & 0.18    & 3.214\\ \hline
+			1          & 147      & 2   & 0.020    & 0.068\\ \hline
+			2          & 99       & 2   & 0.030    & 0.152\\ \hline
+			3          & 50       & 2   & 0.070    & 0.700\\ \hline
+			4          & 37       & 3   & 0.140    & 1.891\\ \hline
+			5          & 28       & 3   & 0.180    & 3.214\\ \hline
 		\end{tabular}
 		\captionof{table}{Дифракция без линзы}
 		\label{table:difraction}
@@ -144,10 +144,10 @@
 		\begin{tabular}{|c|c|c|c|c|}
 			\hline
 			Решетка    & $X$, мм   & $m$ & $d$, мм & $\sigma_d \cdot 10^{-3}$, мм\\ \hline
-			2          & 210       & 1   & 0.03    & 0.016\\ \hline
-			3          & 104       & 1   & 0.06    & 0.040\\ \hline
-			4          & 105       & 2   & 0.12    & 0.079\\ \hline
-			5          & 79        & 2   & 0.16    & 0.125\\ \hline
+			2          & 210       & 1   & 0.030    & 0.016\\ \hline
+			3          & 104       & 1   & 0.060    & 0.040\\ \hline
+			4          & 105       & 2   & 0.120    & 0.079\\ \hline
+			5          & 79        & 2   & 0.160    & 0.125\\ \hline
 		\end{tabular}
 		\captionof{table}{Дифракция с линзой}
 		\label{table:lense_difractiton}
@@ -216,7 +216,52 @@
 		\caption{график зависимости $\Delta y(\frac{1}{d})$}
 	\end{figure}
 
+	\subsection{Влияние щелевой диафрагмы на изображение сетки}
+
+	Поставим на место щели кассету с сетками и сфокусируем на экран изображение сетки. 
+	Поставим в плоскости $\Phi$ вертикальную щель и проследим за изменением изображения на экране при сужении щели.
+
+    \begin{figure}[h!]
+        \begin{center}
+            \begin{minipage}[h!]{0.48\linewidth}
+				\centering
+                \includegraphics[scale=0.4]{Изначальн}
+				\caption{Изначальная картина сетки}
+            \end{minipage}
+            \hfill
+            \begin{minipage}[h!]{0.48\linewidth}
+				\centering
+                \includegraphics[scale=0.4]{Вертик}
+	  			\caption{Картина сетки при вертикальной щели}
+            \end{minipage}
+        \end{center}
+    \end{figure}
+
+	\begin{figure}[h!]
+        \begin{center}
+            \begin{minipage}[h!]{0.48\linewidth}
+				\centering
+                \includegraphics[scale=0.4]{Горизонт}
+				\caption{Картина сетки при горизонтальной щели}
+            \end{minipage}
+            \hfill
+            \begin{minipage}[h!]{0.48\linewidth}
+				\centering
+                \includegraphics[scale=0.4]{45град}
+ 				\caption{Картина сетки при положении щели под углом $45^\circ$ к вертикали}
+            \end{minipage}
+        \end{center}
+    \end{figure}
+
 	\section{Вывод}
 
+    В данной работе мы пронаблюдали различные эффекты Фурье-оптики. Было установлено:
+    
+    \begin{enumerate}
+    	\item вычисление малых размеров щели и периодов сеток с помощью дифракции дает более точные результаты, чем вычисление тех же величин с помощью увеличивающих линз.
+    	\item были найдены периоды дифракционных решеток
+    	\item мы пронаблюдали эффект мультиплицирования
+    	\item исследовали влияние щелевой диафрагмы на изображение сетки
+    \end{enumerate}
     
 \end{document}
