@@ -130,11 +130,47 @@
 	\begin{equation}
 		s(h) = \frac{R}{n - 1} \left(1 - \frac{n^2 h^2}{2 R^2} \right)
 	\end{equation}
-	
-	\begin{wrapfigure}{r}{0.45\textwidth}
-		\includegraphics[width = 0.45\textwidth]{images/aberation_equation.png}
+
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.5]{images/aberation_equation.png}
 		\caption{Сферическая аберрация плосковыпуклой линзы}
 		\label{fig:aberration_equation}
+	\end{figure}
+
+	\textbf{Характеристической кривой} сферической аберрации называют зависимость
+	
+	\begin{equation} \label{eq:sphere_aberration}
+		\delta s(h) = s(h) - s(0) = - \frac{n^2 h^2}{2(n - 1) R} = - \frac{1}{2} \left( \frac{n}{n - 1} \right)^2 \left( \frac{h}{f} \right)^2 f
+	\end{equation}
+	
+	При $h = r$ ($r$ -- радиус линзы) формула \eqref{eq:sphere_aberration} определяет продольную сферическую аберрацию линзы.
+	
+	\subsection*{Хроматическая аберрация}
+	
+	Хроматическая аберрация (зависимость фокусного расстояния линзы от длин волны) возникает вследствие дисперсии показателя преломления стёкол.
+	
+	\begin{wrapfigure}{l}{0.45\textwidth}
+		\includegraphics[width = 0.45\textwidth]{images/Chromatic_aberration.png}
+		\caption{Хроматическая аберрация}
+		\label{Chromatic_aberration}
 	\end{wrapfigure}
 
+	Хроматическую аберрацию принято характеризовать разностью фокусных расстояний для двух характерных спектральных линий водорода, расположенных в крайних частях видимой области спектра: $\lambda_F = 486.1$ нм (голубая линия $F$ водорода), $\lambda_C = 656.3$ (красная линия $C$ водорода):
+	
+	\begin{equation} \label{eq:chromatic_aberation}
+		\delta f_{xp} = f_F - f_C
+	\end{equation}
+
+	Для характеристики дисперсионных свойств стёкол часто пользуются так называемым \textbf{коэффициентом дисперсии}, или \textbf{числом Аббе}:
+	
+	\begin{equation} \label{eq:Abbe_constant}
+		\nu = \frac{n_D - 1}{n_F - n_C}
+	\end{equation}
+	
+	где $n_F$ и $n_C$ -- показатели преломления для линий $F$ и $C$ водорода, а $n_D$ показатель преломления для жёлтой линии $D$ натрия $\lambda_D = 589.3$ нм (среднее значение длины волны жёлтого дублета натрия). Можно выразить продольную хроматическую аберрацию линзы через число Аббе:
+	
+	\begin{equation}
+		\delta f_{xp} = - \frac{n_F - n_C}{n_D - 1} f_D = - \frac{1}{\nu} f_D
+	\end{equation}
 \end{document}
