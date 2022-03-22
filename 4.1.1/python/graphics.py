@@ -24,8 +24,8 @@ ax1.grid(which = 'major', color = 'black', linewidth = 1, linestyle = '-', alpha
 ax1.grid(which = 'minor', color = 'grey', linewidth = 1, linestyle = '--', alpha = 0.5)
 
 # оформление
-plt.ylabel(r'$\delta$, мм')
-plt.xlabel('h, мм')
+plt.ylabel(r'$\delta s$, мм')
+plt.xlabel(r'$h^2$, мм$^2$')
 ax1.text(20, 2.33, 'y(x) = %0.3f x + %0.3f' %(lin.slope, lin.intercept))
 ax1.text(20, 2.23, 'slope_err = %f' %lin.stderr)
 ax1.text(20, 2.13, 'intercept_err = %f' %lin.intercept_stderr)
