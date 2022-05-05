@@ -80,8 +80,145 @@
 		\centering	
 		\includegraphics[scale=0.6]{pic_7.png}
 		\caption{Схема для определения скорости ультразвука методом темного поля}
-		\label{shema1}
+		\label{shema2}
 	\end{figure}
 
 	\section*{Ход работы}
+	
+	\subsection*{Определение скорости ультразвука по дифракционной картине}
+	
+	Проводить эксперимент будем с использованием установки рис \ref{shema1}. Запишем параметры установки.
+	
+	\begin{center}
+		Фокусные расстояние объективов: $F_1 = F_2 = 30$ см\\
+		Длина волны и полоса пропускания для зеленого света: $\lambda_{\text{зел}} = 546 ~ \pm ~ 495$ нм \\
+		Длина волны и полоса пропускания для красного света: $\lambda_{\text{крас}} = 640 ~ \pm ~ 20$ нм \\
+	\end{center}
+
+	Исследуем изменение дифракционной картины в зеленом и красном свете. \textbf{Полученные выводы:} 
+	
+	\begin{enumerate}
+		\item При уменьшении мощности УЗ число дифракционных полос уменьшается.
+		\item При замене светофильтра с зеленого на красный качество дифракционной картины улучшается.
+		\item При наблюдении дифракционной картины в немонохроматическом свете качество дифракционной картины ухудшается. Это связано с временной когерентностью.
+	\end{enumerate}
+
+	Измерим положение $x$ дифракционных максимумов на разных частотах, по полученным данным построим графики зависимости $x(n)$. 
+	
+	Экспериментальные данные приведены в таблицах \ref{tab:frequency1}, \ref{tab:frequency2}, \ref{tab:frequency3} и \ref{tab:frequency4}.
+	
+	\input{./tables/frequency1.tex}
+	
+	\begin{figure}
+		\centering
+		\includegraphics[scale=1]{./images/frequency1.ods.pdf}
+		% \caption{text}
+		\label{fig:frequency1}
+	\end{figure}
+	
+	\input{./tables/frequency2.tex}
+	
+	\begin{figure}
+		\centering
+		\includegraphics[scale=1]{./images/frequency2.ods.pdf}
+		% \caption{text}
+		\label{fig:frequency2}
+	\end{figure}
+	
+	\input{./tables/frequency3.tex}
+	
+	\begin{figure}
+		\centering
+		\includegraphics[scale=1]{./images/frequency3.ods.pdf}
+		% \caption{text}
+		\label{fig:frequency3}
+	\end{figure}
+	
+	\input{./tables/frequency4.tex}
+	
+	\begin{figure}
+		\centering
+		\includegraphics[scale=1]{./images/frequency4.ods.pdf}
+		% \caption{text}
+		\label{fig:frequency4}
+	\end{figure}
+
+	По наклону каждого графика можно определить среднее расстояние между двумя максимумами, а зная длину волны найдем длину ультразвуковой волны по формуле:
+	
+	\[ \alpha = \frac{l_m}{m} = f \frac{\lambda}{\Lambda} \]
+	
+	где $l_m$ -- среднее расстояние между максимумами, $\alpha$ -- наклон графика, $\Lambda$ -- длина УЗ волны. Зная величину $\Lambda$ можем вычислить скорость УЗ по формуле
+	
+	\[v = \Lambda \nu \]
+	
+	Расчет погрешностей
+	
+	\[ \frac{\sigma_{\Lambda}}{\Lambda} = \frac{\sigma_{\alpha}}{\alpha} \Rightarrow \sigma_{\Lambda} = \frac{\sigma_{\alpha}}{\alpha} \Lambda \]
+	
+	\[ \sigma_{v} = \sqrt{\varepsilon_{\Lambda}^2 + \varepsilon_{\nu}^2} v \]
+	
+	где $\nu$ -- частота УЗ. Результаты вычислений приведены в таблице \ref{tab:res}.
+	
+	\input{./tables/results.tex}
+	
+	\subsection*{Определение скорости ультразвука методом темного поля}
+	
+	Для данного эксперимента будем использовать установку \ref{shema2}. Установим цену деления окулярной шкалы в условиях опыта. В нашем случае цена деления $0.5$ мм.
+	
+	Получим изображение УЗ решетки, с помощью окулярной шкалы найдем расстояние между двумя удаленными минимумами и посчитаем количество полос между ними.
+	
+	Без применения метода темного поля звуковая решетка не наблюдается. Закроем нулевой максимум горизонтальной нитью. Таким образом, осевая составляющая фазово-модулированной волны поглощается, а боковые остаются без изменения. Получившееся поле: 
+	
+	\begin{equation}\label{}
+	f(x) = \dfrac{im}{2} e^{i\Omega x} +  \dfrac{im}{2} e^{-i\Omega x} = im \cos \Omega x \te I(x) = m^2 \cos ^2 \Omega x = m^2 \dfrac{1 + \cos ^2 2 \Omega x}{2}
+	\end{equation}
+	
+	Отсюда получаем, что расстояние между темными полосами есть $ \Lambda/2 $.
+	
+	Проведем измерение длины ультразвуковой волны, приняв ошибку равной цене деления окулярной шкалы.
+	
+	Формулы для расчета длины волны ультразвука $ \Lambda $ и скорости распространения $ v $ в воде:
+	
+	\begin{equation}\label{}
+	\Lambda/2  = NC/(n - 1),  \qquad v = \nu\Lambda
+	\end{equation}
+	
+	\begin{table}
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+			\hline
+			$\nu$, Мгц & Количество делений $N$ & Количество темных полос $n$ & $\Lambda$, мм & $v$, м/с \\ \hline
+			1,220 & 150 & 15 & 1,29 & 1570 \\ \hline
+			1,259 & 150 & 16 & 1,20 & 1510 \\ \hline
+			1,271 & 175 & 18 & 1,24 & 1570 \\ \hline
+		\end{tabular}
+	\end{table}
+
+	\subsection*{Качественные наблюдения}
+	
+	Если последовательно закрывать нулевой, первый и второй максимумы дифракционной картины, то качество наблюдаемой УЗ решетки будет ухудшаться (см. рис \ref{1}, \ref{2}, \ref{3}).
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.5\linewidth]{./images/фазовая_решетка_закрыт_нулевой_максимум}
+		\caption{фазовая решетка закрыт нулевой максимум}
+		\label{1}
+	\end{figure}
+
+	\begin{figure}[h!]
+		\begin{center}
+			\begin{minipage}[h!]{0.48\linewidth}
+				\includegraphics[width=1\linewidth]{./images/фазовая_решетка_закрыт_первый_максимум}
+				\caption{фазовая решетка закрыт первый максимум}
+				\label{2}
+			\end{minipage}
+			\hfill
+			\begin{minipage}[h!]{0.48\linewidth}
+				\includegraphics[width=1\linewidth]{./images/фазовая_решетка_закрыт_второй_максимум}
+				\caption{фазовая решетка закрыт второй максимум}
+				\label{3}
+			\end{minipage}
+		\end{center}
+	\end{figure}
+
 \end{document}
