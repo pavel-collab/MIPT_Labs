@@ -30,7 +30,7 @@ plt.xlabel('H, А/м')
 plt.ylabel('B, Тл')
 PythonGraphMod.AddGreed(ax1)
 
-# fig1.savefig('../images/sample1_B(H)Python.png')
+fig1.savefig('../images/sample1_B(H)Python.png')
 
 # =================================================================================================
 # first sample graphics mu(H)
@@ -52,7 +52,7 @@ plt.xlabel('H, А/м')
 plt.ylabel(r'$\mu$')
 PythonGraphMod.AddGreed(ax2)
 
-# fig2.savefig('../images/sample1_mu(H)Python.png')
+fig2.savefig('../images/sample1_mu(H)Python.png')
 
 # =================================================================================================
 # second sample graphics B(H)
@@ -74,7 +74,7 @@ plt.xlabel('H, А/м')
 plt.ylabel('B, Тл')
 PythonGraphMod.AddGreed(ax3)
 
-# fig3.savefig('../images/sample2_B(H)Python.png')
+fig3.savefig('../images/sample2_B(H)Python.png')
 
 # =================================================================================================
 # second sample graphics mu(H)
@@ -96,7 +96,7 @@ plt.xlabel('H, А/м')
 plt.ylabel(r'$\mu$')
 PythonGraphMod.AddGreed(ax4)
 
-# fig4.savefig('../images/sample2_mu(H)Python.png')
+fig4.savefig('../images/sample2_mu(H)Python.png')
 
 # =================================================================================================
 plt.show()

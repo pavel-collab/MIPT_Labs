@@ -26,4 +26,4 @@ plt.ylabel('B, мТл')
 PythonGraphMod.AddGreed(ax)
 plt.show()
 
-# fig.savefig('images/solenoid.png')
+fig.savefig('../images/solenoid.png')

@@ -230,7 +230,7 @@ plt.show()
 
 # safing figures
 fig1.savefig('../images/VAC1.png')
-# fig2.savefig('../images/VAC2.png')
-# fig3.savefig('../images/VAC3.png')
-# fig4.savefig('../images/VAC4.png')
-# fig5.savefig('../images/all_VAC.png')
+fig2.savefig('../images/VAC2.png')
+fig3.savefig('../images/VAC3.png')
+fig4.savefig('../images/VAC4.png')
+fig5.savefig('../images/all_VAC.png')

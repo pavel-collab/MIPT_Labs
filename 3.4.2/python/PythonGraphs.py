@@ -125,7 +125,7 @@ PythonGraphMod.AddGreed(ax4)
 
 plt.show()
 
-# fig1.savefig('../images/graph_1x(T).png')
-# fig2.savefig('../images/graph_x(T).png')
-# fig3.savefig('../images/graph_mu(T).png')
-# fig4.savefig('../images/graph_L(T).png')
+fig1.savefig('../images/graph_1x(T).png')
+fig2.savefig('../images/graph_x(T).png')
+fig3.savefig('../images/graph_mu(T).png')
+fig4.savefig('../images/graph_L(T).png')
