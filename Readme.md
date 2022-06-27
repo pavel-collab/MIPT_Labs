@@ -58,6 +58,8 @@ chmod +x clean.sh
 
 Сборку данного проекта возможно провести в онлайн Latex редакторе Overleaf. Для этого необходимо иметь аккаунт на сайте [https://ru.overleaf.com/login](https://ru.overleaf.com/login). Сознайде новый проект и удалите все автоматически созданные файлы. Загрузите с вашего компьютера все файлы и папки, кроме _clean.sh_, откройте в Overleaf файл main.tex и нажмите на кнопку __Recompile__.
 
+ATTENTION: для того, чтобы корректно скомпилировать проект в Overleaf необходимо перейдите в папку _include_ и перенесите строчку __\documentclass[a4paper, 12pt]{article}__ в начало файла _main.tex_.
+
 ## Несколко полезных вещей, если вы пишете на Linux
 
 To copy basic files from Template/ to directory with labwork on Linux use:
