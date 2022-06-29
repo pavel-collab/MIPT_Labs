@@ -33,7 +33,7 @@ sudo apt-get install texlive-latex-extra
 
 Скопируйте проект в рабочую директорию вашего ПК, используя команду
 ```
-git clone
+git clone https://github.com/pavel-collab/MIPT_Labs.git
 ```
 
 Чтобы запустить автоматическую сборку в рабочей директории неободимо выполнить команду
