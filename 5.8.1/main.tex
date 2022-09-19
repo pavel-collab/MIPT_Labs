@@ -132,6 +132,9 @@
 
 	\[ \varepsilon_{\sigma} = \sqrt{\varepsilon_U^2 + \varepsilon_I^2 + 4 \varepsilon_T^2} \]
 
+	\textbf{Заметим, что погрешность мощности пренебрежимо мала по сравнению с погрешностью температуры,
+	($10^{-5}$ по сравнению с $10^{-3}$) поэтому при расчетах данное слагаемое было исключено.}
+
 	Поскольку в качестве итогового значения $\sigma$ мы берем среднее значения по всем температурам,
 	необходимо вычислить погрешность среднего арифметического (здесь считаем, что 
 	$\overline{\sigma}$ -- среднее значение).
@@ -141,12 +144,17 @@
 	\input{tables/calculations.tex}
 
 	\begin{center}
-		\fbox{$\sigma = 1.9 \cdot 10^{-9} ~ \frac{\text{Вт}}{\text{см}^2 K^4}$}
+		\fbox{$\sigma = (1.9 \pm 0.24) \cdot 10^{-9} ~ \frac{\text{Вт}}{\text{см}^2 K^4}$}
 	\end{center}
 
 	По найденным значениям $\sigma$ посчитаем постоянную планка $h$, используя формулу
 
-	\[ h = ^3\sqrt{\frac{2 \pi^5 k_{\text{Б}}^4}{15 c^2 \sigma}} \]
+	\[ h = \sqrt[3]{\frac{2 \pi^5 k_{\text{Б}}^4}{15 c^2 \sigma}} \]
+
+	Погрешность $h$:
+
+	\[ \varepsilon_h = \frac{1}{3} \sqrt[3]{\frac{2 \pi^5 k_{\text{Б}}^4}{15 c^2 }} \varepsilon_{\sigma} \]
+	\[ \sigma_h = \frac{1}{3} \sqrt[3]{\frac{2 \pi^5 k_{\text{Б}}^4}{15 c^2 }} \varepsilon_{\sigma} h \]
 
 	\begin{center}
 		\fbox{$h = 2.05 \cdot 10^{-33}$ Дж$\cdot$с}
