@@ -120,6 +120,24 @@
 
 	\[\sigma = \frac{W}{\varepsilon_T S T^4} \]
 
+	Расчитаем погрешность для коэффициента Стефана-Больцмана по правилу расчета косвенной погрешности.
+
+	\[ \varepsilon_{\sigma} = \sqrt{\varepsilon_W^2 + 4 \varepsilon_T^2} \]
+
+	при этом
+
+	\[ \varepsilon_W = \sqrt{\varepsilon_U^2 + \varepsilon_I^2} \]
+
+	Получаем расчет погрешности $\varepsilon_{\sigma}$ (для одной температуры)
+
+	\[ \varepsilon_{\sigma} = \sqrt{\varepsilon_U^2 + \varepsilon_I^2 + 4 \varepsilon_T^2} \]
+
+	Поскольку в качестве итогового значения $\sigma$ мы берем среднее значения по всем температурам,
+	необходимо вычислить погрешность среднего арифметического (здесь считаем, что 
+	$\overline{\sigma}$ -- среднее значение).
+
+	\[ err = \sqrt{\frac{\sum (\sigma_i - \overline{\sigma})^2}{n(n - 1)}} \]
+
 	\input{tables/calculations.tex}
 
 	\begin{center}
