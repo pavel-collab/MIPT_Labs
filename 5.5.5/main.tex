@@ -53,21 +53,96 @@
 
     \section*{Обработка эксперементальных данных}
 
+	Снимем данные для образцов. По полученным данным построим графики (предварительно из каждого спектра
+	вычтем спектр шума) рис \ref{fig:spectrum}.
+
+	\begin{figure}
+		\centering
+		\includegraphics[width=\textwidth]{all_graphs.pdf}
+		\caption{Спектры для всех элементов}
+		\label{fig:spectrum}
+	\end{figure}
+
+	Используя известные (табличные) значения энергий пиков, соответствующих определенным каналам, найдем
+	линейное преобразования номера канала в энергию пика рис \ref{fig:Channel2Energy}.
+
+	\begin{figure}
+		\centering
+		\includegraphics[width=\textwidth]{Channel2Energy.pdf}
+		\caption{График перевода номера канала в значение энергии}
+		\label{fig:Channel2Energy}
+	\end{figure}
+
+	Таким образом, линейное преобразование имеет вид
+
+	\[ E = (-53.23 \pm 7.10) + (0.7469 \pm 0.006) N ~ [\text{кэВ}] \]
+
+	\begin{center}
+		Пики натрия: \\
+		511 кэВ -- канал 725 \\
+		1275 кэВ -- канал 1710 \\[1 cm]
+		Пик цезия: \\
+		662 кэВ -- канал 920
+	\end{center}b
+
     % значению канала соответсвует значение энергии гамма-кванта
     % нам известны значения энергий фотопиков для 3х изотопов
     % эксперементально мы можем узнать номера каналов фотопиков для этих изотопов
     % поскольку зависимость линейная, мы можем построить линейный график и однозначно определять энергию по значению канала
 
-    % линейные коэффициенты kx + b:
-    % k = 0.7469766723171799 +- 0.005710818813457874
-    % b = -53.23185435309176 +- 7.109247697642382
+	Используя полученное преобразование, найдем энергии пиков полного поглащения для всех остальных
+	элементов \ref{tab:main_table}.
 
-    Определим энергии края комптоновского поглощения для Co, Cs и Na, и сравним с теоретическими значениями.
+	\input{tables/main_table.tex}
+
+    Определим энергии края комптоновского поглощения для Co, Cs и Na, и сравним с теоретическими значениями \ref{tab:kompton}.
 
     \input{tables/Kompton.tex}
 
-    определим энергии пиков обратного рассеяния и сравним их с теоретическими.
+    Определим энергии пиков обратного рассеяния и сравним их с теоретическими \ref{tab:back_f}.
 
     \input{tables/back_f.tex}
+
+	\begin{figure}
+		\centering
+		\includegraphics[width=\textwidth]{Noise.pdf}
+		\caption{Спектры для всех элементов}
+		\label{fig:Noise}
+	\end{figure}
+
+	\begin{figure}
+		\centering
+		\includegraphics[width=\textwidth]{Am.pdf}
+		\caption{Спектры для всех элементов}
+		\label{fig:Am}
+	\end{figure}
+
+	\begin{figure}
+		\centering
+		\includegraphics[width=\textwidth]{Co.pdf}
+		\caption{Спектры для всех элементов}
+		\label{fig:Co}
+	\end{figure}
+
+	\begin{figure}
+		\centering
+		\includegraphics[width=\textwidth]{Cs.pdf}
+		\caption{Спектры для всех элементов}
+		\label{fig:Cs}
+	\end{figure}
+
+	\begin{figure}
+		\centering
+		\includegraphics[width=\textwidth]{Eu.pdf}
+		\caption{Спектры для всех элементов}
+		\label{fig:Eu}
+	\end{figure}
+
+	\begin{figure}
+		\centering
+		\includegraphics[width=\textwidth]{Na.pdf}
+		\caption{Спектры для всех элементов}
+		\label{fig:Na}
+	\end{figure}
 
 \end{document}
